@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StresTestAI - Safe Load Simulator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>StresTestAI</h1>
+      <p class="tagline">Simulate, analyze and visualize load patterns - safe, offline, and educational.</p>
+    </header>
+
+    <section class="controls card">
+      <h2>Simulation Parameters</h2>
+      <div class="row">
+        <label>Virtual clients
+          <input id="clients" type="number" min="1" max="10000" value="50" />
+        </label>
+        <label>Reqs per client / sec
+          <input id="rps" type="number" min="0.1" step="0.1" value="1.0" />
+        </label>
+        <label>Duration (sec)
+          <input id="duration" type="number" min="1" max="3600" value="30" />
+        </label>
+      </div>
+
+      <div class="row">
+        <label>Latency base ms
+          <input id="baseLatency" type="number" min="1" value="50" />
+        </label>
+        <label>Jitter ms
+          <input id="jitter" type="number" min="0" value="30" />
+        </label>
+        <label>Spike chance %
+          <input id="spikeChance" type="number" min="0" max="100" value="5" />
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="runBtn">Run Simulation</button>
+        <button id="exportBtn">Export CSV</button>
+        <span id="status" class="status">Idle</span>
+      </div>
+    </section>
+
+    <section class="results card">
+      <h2>Results</h2>
+      <div class="metrics" id="metrics">
+      </div>
+
+      <canvas id="latencyChart" width="1000" height="300"></canvas>
+    </section>
+
+    <footer class="footer">
+      <small>Safe simulator only - do not use to attack systems. Built with HTML • CSS • JS • C • C++</small>
+    </footer>
+  </main>
+
+  <script src="pw_stress_wasm.js" defer></script>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
