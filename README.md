@@ -6,7 +6,7 @@ The system uses a web interface (frontend) and native modules (backend) to perfo
 ---
 
 ## ScreenShot
-![ScreenShot](ScreenShot.png)
+![ScreenShot](ScreenShot1.png)
 
 ## 🚀 Features
 
@@ -74,4 +74,5 @@ Compile the project with GCC/Clang
 
 📜 License
 MIT License © 2025
+
 You are free to use, modify, and distribute this project with attribution.
